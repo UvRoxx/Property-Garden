@@ -155,7 +155,7 @@ def login():
             flash("User Not Found")
     else:
         flash("Error")
-    return render_template("login.html", form=login_form, name=welcome_name())
+    return render_template("login.html", form=login_form, name=welcome_name(),logged_in=current_user.is_authenticated)
 
 
 @app.route('/logout')
@@ -211,7 +211,7 @@ def add_listing():
         print("Listing Added Successfully")
         return redirect(url_for('show_all'))
 
-    return render_template("post-listing.html", form=listing_form, name=welcome_name())
+    return render_template("post-listing.html", form=listing_form, name=welcome_name(),logged_in=current_user.is_authenticated)
 
 
 @app.route("/direct/<index>", methods=['GET', 'POST'])
@@ -237,12 +237,12 @@ def direct_post(index):
         print("Listing Added Successfully")
         return redirect(url_for('show_all'))
 
-    return render_template("post-direct.html", form=direct_form, name=welcome_name())
+    return render_template("post-direct.html", form=direct_form, name=welcome_name(),logged_in=current_user.is_authenticated)
 
 
 @app.route("/showlisting")
 def show_all():
-    return render_template("show-listing.html", listings=db.session.query(Listing).all(), name=welcome_name())
+    return render_template("show-listing.html", listings=db.session.query(Listing).all(), name=welcome_name(),logged_in=current_user.is_authenticated)
 
 
 @app.route("/deatil-listing/<id>", methods=['GET', 'POST'])
@@ -255,7 +255,7 @@ def show_listing_detail(id):
         message = contact_form.message.data.split(">")[1].split("<")[0]
         send_mail(current_user.email, message, sender.name, sender.email)
         return redirect(url_for("home"))
-    return render_template("display-detail.html", listing=display_listing, form=contact_form)
+    return render_template("display-detail.html", listing=display_listing, form=contact_form,logged_in=current_user.is_authenticated)
 
 
 # ------------------------------------------------------------------
@@ -267,7 +267,7 @@ def ShowMyListings():
     listings = Listing.query.filter_by(author_id=current_user.id).all()
     user = User.query.get(current_user.id)
     length=len(listings)
-    return render_template("showMyListings.html", listing=listings, user=user,length=length)
+    return render_template("showMyListings.html", listing=listings, user=user,length=length,logged_in=current_user.is_authenticated)
 
 
 @app.route('/delete_listing<id>', methods=['GET', 'POST'])
@@ -276,7 +276,7 @@ def delete_listing(id):
     listing = Listing.query.get(id)
     db.session.delete(listing)
     db.session.commit()
-    return render_template('showMyListings.html')
+    return render_template('showMyListings.html',logged_in=current_user.is_authenticated)
 
 
 def welcome_name() -> str:
