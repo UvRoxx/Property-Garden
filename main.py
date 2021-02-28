@@ -35,19 +35,19 @@ search_zumper = SearchZumper()
 search_kijiji = SearchKijiji()
 search_dupropio = SearchDupropio()
 Bootstrap(app)
-app.config["SECRET_KEY"] = "8BYkEfBA6O6donzWlSihBXox7C0sKR6b"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 # CKEditor Config
 
 ckeditor = CKEditor(app)
 app.config['CKEDITOR_PKG_TYPE'] = 'baisc'
 app.config['RECAPTCHA_USE_SSL'] = False
-app.config['RECAPTCHA_PUBLIC_KEY'] = os.environ['PUBLIC_KEY']
-app.config['RECAPTCHA_PRIVATE_KEY'] = os.environ['SECRET_KEY']
+app.config['RECAPTCHA_PUBLIC_KEY'] = os.environ.get('PUBLIC_KEY')
+app.config['RECAPTCHA_PRIVATE_KEY'] = os.environ.get('SECRET_KEY')
 app.config['RECAPTCHA_OPTIONS'] = {'theme': 'white'}
 
 # Database Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///property.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
