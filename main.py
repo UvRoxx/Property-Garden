@@ -29,7 +29,7 @@ import os
 # GLOBAL VARS
 
 # Flask App Setup
-app = Flask(_name_)
+app = Flask(__name__)
 search_centris = SearchCentris()
 search_zumper = SearchZumper()
 search_kijiji = SearchKijiji()
@@ -61,7 +61,7 @@ login_manager.init_app(app)
 # Database Models
 
 class User(UserMixin, db.Model):
-    _tablename_ = "user"
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
@@ -70,7 +70,7 @@ class User(UserMixin, db.Model):
 
 
 class Listing(db.Model):
-    _tablename_ = "listing"
+    __tablename__ = "listing"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -296,5 +296,5 @@ def notfound(*args):
     return render_template('NotFound.html')
 
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
