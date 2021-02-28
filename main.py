@@ -29,13 +29,13 @@ import os
 # GLOBAL VARS
 
 # Flask App Setup
-app = Flask(__name__)
+app = Flask(_name_)
 search_centris = SearchCentris()
 search_zumper = SearchZumper()
 search_kijiji = SearchKijiji()
 search_dupropio = SearchDupropio()
 Bootstrap(app)
-app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config["SECRET_KEY"] = "8BYkEfBA6O6donzWlSihBXox7C0sKR6b"
 
 # CKEditor Config
 
@@ -47,7 +47,7 @@ app.config['RECAPTCHA_PRIVATE_KEY'] = os.environ.get('SECRET_KEY')
 app.config['RECAPTCHA_OPTIONS'] = {'theme': 'white'}
 
 # Database Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///property.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -61,7 +61,7 @@ login_manager.init_app(app)
 # Database Models
 
 class User(UserMixin, db.Model):
-    __tablename__ = "user"
+    _tablename_ = "user"
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
@@ -70,7 +70,7 @@ class User(UserMixin, db.Model):
 
 
 class Listing(db.Model):
-    __tablename__ = "listing"
+    _tablename_ = "listing"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -116,6 +116,7 @@ def results(query, page_number: int):
             result += info
     # result = shuffle(result)
 
+   
     with open('data.json', 'w') as fp:
         json.dump(result, fp)
     try:
@@ -215,7 +216,6 @@ def add_listing():
 
 
 @app.route("/direct/<index>", methods=['GET', 'POST'])
-@login_required
 def direct_post(index):
     index = int(index)
     with open('data.json', 'r') as fp:
@@ -277,7 +277,7 @@ def delete_listing(id):
     listing = Listing.query.get(id)
     db.session.delete(listing)
     db.session.commit()
-    return render_template('showMyListings.html',logged_in=current_user.is_authenticated)
+    return render_template('showMyListings.html')
 
 
 def welcome_name() -> str:
@@ -285,8 +285,6 @@ def welcome_name() -> str:
         return User.query.get(current_user.id).name
     else:
         return ""
-
-
 
 
 @app.errorhandler(401)
@@ -298,6 +296,5 @@ def notfound(*args):
     return render_template('NotFound.html')
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     app.run(debug=True)
-
