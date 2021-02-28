@@ -8,8 +8,8 @@ from email.utils import make_msgid
 from pathlib import Path
 import os
 
-SENDER_MAIL = os.environ['SENDER_MAIL']
-SENDER_PASS = os.environ['SENDER_PASS']
+SENDER_MAIL = os.environ.get('SENDER_MAIL')
+SENDER_PASS = os.environ.get('SENDER_PASS')
 SENDER_SMTP = "smtp.gmail.com"
 PORT = 587
 NUMBER_OF_SAVED_LETTERS = 3
