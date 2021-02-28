@@ -215,6 +215,7 @@ def add_listing():
 
 
 @app.route("/direct/<index>", methods=['GET', 'POST'])
+@login_required
 def direct_post(index):
     index = int(index)
     with open('data.json', 'r') as fp:
