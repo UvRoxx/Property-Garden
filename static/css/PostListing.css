@@ -1,0 +1,187 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 3rem;
+    margin-bottom: 1rem;
+
+    list-style: none;
+    background-color: #e9ecef;
+
+     border-radius: 41px;
+    max-width: 100%;
+
+
+}
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem;
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+.breadcrumb {
+    display:none;
+}
+.signup-form !important{
+    width: 96%;
+    margin: 30px auto;
+}
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+.breadcrumb {
+    display:none;
+}
+
+.signup-form {
+    width: 96% !important;
+    margin: 30px auto;
+}
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+.breadcrumb {
+    display:none;
+}
+.signup-form {
+    width: 96% !important;
+    margin: 30px auto;
+}
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+.breadcrumb {
+    display:none;
+}
+.signup-form {
+    width: 96% !important;
+    margin: 30px auto;
+}
+}
+
+
+body {
+		color: #fff;
+	background:url("https://static.zumpercdn.com/nzr/a82e088b60e22990965c5e3a875825ec2c653022/img/homepage/hero.jpg?auto=format&fit=crop&w=976&h=702");
+  background-size:contain;
+    backdrop-filter: blur(3px);
+      background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+		font-family: 'Roboto', sans-serif;
+	}
+    .form-control{
+		height: 41px;
+		background: #f2f2f2;
+		box-shadow: none !important;
+		border: none;
+
+	}
+	.form-control:focus{
+		background: #e2e2e2;
+	}
+    .form-control, .btn{
+        border-radius: 3px;
+    }
+	.signup-form{
+		width:73%;
+		margin: 30px auto;
+	}
+
+	.signup-form form{
+		color: #999;
+    border-radius: 23px;
+    	margin-bottom: 15px;
+        background: #fff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+
+
+    }
+	.signup-form h2 {
+		color: #333;
+		font-weight: bold;
+        margin-top: 0;
+    }
+    .signup-form hr {
+        margin: 0 -30px 20px;
+    }
+	.signup-form .form-group{
+		margin-bottom: 20px;
+	}
+	.signup-form input[type="checkbox"]{
+		margin-top: 3px;
+	}
+	.signup-form .row div:first-child{
+		padding-right: 10px;
+	}
+	.signup-form .row div:last-child{
+		padding-left: 10px;
+	}
+    .signup-form .btn{
+        font-size: 16px;
+        font-weight: bold;
+		background: #3598dc;
+		border: none;
+		min-width: 140px;
+		color: #eee;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus{
+		background: #2389cd !important;
+        outline: none;
+	}
+    .signup-form a{
+		color: #fff;
+		text-decoration: underline;
+	}
+	.signup-form a:hover{
+		text-decoration: none;
+	}
+	.signup-form form a{
+		color: #3598dc;
+		text-decoration: none;
+	}
+	.signup-form form a:hover{
+		text-decoration: underline;
+	}
+    .signup-form .hint-text {
+		padding-bottom: 15px;
+		text-align: center;
+    }
+    .aboutTab{
+
+    padding:10px;
+    }

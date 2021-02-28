@@ -1,0 +1,37 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% include "header.html" %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static', filename='css/Navbar.css')}}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/PostListing.css')}}">
+{% endblock %}
+{% block content %}
+<!-- Page Header -->
+
+<div class="spacer"></div>
+
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{url_for('home')}}"> <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active">Post Listing</li>
+            </ol>
+        </nav>
+    </div>
+
+
+    <div class="signup-form">
+{{wtf.quick_form(form)}}
+    </div>
+</section>
+
+
+{% endblock %}

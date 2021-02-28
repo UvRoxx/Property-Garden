@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="static/css/Bootstrap.css">
+<link rel="stylesheet" href="static/css/SearchListings.css">
+<script src="https://kit.fontawesome.com/18ad7e4eb5.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://use.fontawesome.com/edee9f2c02.js" crossorigin="anonymous"></script>
+
+ <!-- Showcase -->
+    <section id="showcase">
+      <div class="container text-center">
+        <div class="home-search p-5">
+          <div class="overlay p-5">
+            <h1 class="display-4 mb-4">Property Searching Just Got So Easy</h1>
+            <p class="lead">
+                <b>Find Rentals and Roommates  Faster</b>
+            </p>
+            <div class="search">
+ <form method="POST" action="{{url_for('home')}}" novalidate>
+                  {{ form.csrf_token }}
+                <!-- Form Row 1 -->
+                <div class="form-row">
+
+                    <label class="sr-only">City</label>
+{{ form.search (class_="txtCity" , placeholder="City") }}
+
+                </div>
+
+                  <div class="col-md-5 mb-3">
+                       {{form.province}}
+                  </div>
+                    <div class="col-md-5 mb-3">
+                              {{form.number_of_rooms}}
+                            </div>
+
+
+                <!-- Form Row 2 -->
+
+   {{ form.submit (class_="btn-1") }}
+
+ </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+<!--<script>-->
+<!--   (function($) {-->
+<!--  $(document).ready(function() {-->
+<!--    //In this example, I target all links with the class 'loading'-->
+<!--    $('input').click(function() {-->
+<!--      //Remove any current instance of the loading icon first-->
+<!--      $('#loading-icon').remove();-->
+
+<!--      //Check if this clicked link has the 'loading' class-->
+<!--      if($(this).hasClass('btn-1')) {-->
+<!--        //Create a loading icon instance and add it to the body-->
+<!--        $('<i class="fa fa-spin fa-8x fa-cog" id="loading-icon"></i>').appendTo('body');-->
+<!--      }-->
+<!--    });-->
+<!--  });-->
+<!--})(jQuery);-->
+<!--</script>-->

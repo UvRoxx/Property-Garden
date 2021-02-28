@@ -1,0 +1,206 @@
+{% extends "bootstrap/base.html"%}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% include 'header.html'%}
+{% block styles %}
+{{ super() }}
+
+<link rel="stylesheet" href="static/css/ShowListings.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/all.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Navbar.css')}}">
+
+<style>
+
+ #contain_h1{
+   margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color:#eee;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+ }
+
+    body{
+    text-align:center;
+}
+.row{
+  animation: fadeIn 0.8s ease-in 0.01s;
+}
+#bc{
+margin-left:auto;
+margin-right:auto;
+width:80%;
+}
+
+
+
+@keyframes fadeIn {
+  5% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+#contains {
+    background: #transparent;
+
+
+    margin-left: auto;
+    margin-right: auto;
+    height: 20em;
+    position: relative;
+    margin-top: 10%;
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+#contains {
+    margin-top: 37%;
+    background: transparent;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25em;
+    position: relative;
+}
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+#contains {
+    margin-top: 37%;
+    background: transparent;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25em;
+    position: relative;
+}
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+#contains {
+    margin-top: 37%;
+    background: transparent;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25em;
+    position: relative;
+}
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+#contains {
+    margin-top: 37%;
+    background: transparent;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25em;
+    position: relative;
+}
+}
+
+
+
+</style>
+{% endblock%}
+
+{% block title%}Property Garden{% endblock %}
+{% block content%}
+ <div class="spacer"></div>
+
+    <section id="bc" class="mt-3">
+      <div class="containers">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{{url_for('home')}}"> <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item active">Show Listing</li>
+          </ol>
+        </nav>
+      </div>
+
+        {% if length==0 %}
+        <div id="contains">
+             <h1 id="contain_h1">Hey looks like you haven't posted any listings yet...</h1>
+        </div>
+
+
+        {% endif %}
+ {% for list in listing %}
+<div>
+
+</div>
+ <section id="listings" class="py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Listing 1 -->
+
+       <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-preview">
+                 <img
+                class="card-img-top"
+                src="../static/images/logohouse.jpg"
+                alt="PropertyImage" height="280" width="280"
+              />
+
+              <div class="card-img-overlay">
+                <h2>
+
+                  <span class="badge badge-secondary text-white">${{list.price}}</span>
+                </h2>
+              </div>
+              <div class="card-body">
+                <div class="listing-heading text-center">
+                  <h4 class="text-primary"  ><a href="{{url_for('show_listing_detail',id=listing.id)}}"> {{list.address}}</a></h4>
+                  <p>
+                    <i class="fas fa-map-marker text-secondary" ></i> {{list.title}}
+                  </p>
+                </div>
+           <span>Posted By:- </span>     <a href="#">{{list.author.name}}</a>
+                on {{list.date}}
+<br>
+                  <br>
+                  <div>
+                      <a href="{{ url_for('delete_listing',id=list.id)}}">
+                     <i class="fas fa-trash-alt"></i>
+                      </a>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+ </section>
+
+
+{% endblock %}

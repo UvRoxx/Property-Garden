@@ -1,0 +1,82 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% include "header.html" %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static', filename='css/Navbar.css')}}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/PostListing.css')}}">
+{% endblock %}
+{% block content %}
+  <!-- Page Header -->
+
+<div class="spacer"></div>
+
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{url_for('home')}}"> <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active">Post Listing</li>
+            </ol>
+        </nav>
+    </div>
+
+
+<div class="signup-form">
+    <form action="{{ url_for('add_listing') }}" method="POST" novalidate>
+
+ {{ form.csrf_token }}
+
+		<h2>Post a Listing</h2>
+		<p>Please fill in your details to post the listing</p>
+		<hr>
+<!--Title Tab -->
+        <div class="form-group">
+   {{ form.title (class_="form-control", placeholder="Enter your Listings Title")}}
+        </div>
+
+<!--   Url Tab-->
+        <div class="form-group">
+   {{ form.listing_url (class_="form-control", placeholder="Enter your Listings Url")}}
+        </div>
+
+<!--      Address Tab-->
+		<div class="form-group">
+            {{ form.listing_address (class_="form-control", placeholder="Address")}}
+        </div>
+
+<!--      Price-->
+		<div class="form-group">
+{{ form.listing_price (class_="form-control", placeholder="Price")}}
+        </div>
+
+<!--      About You-->
+		<div class="form-group">
+{{ form.about (class_="form-control rounded-0", placeholder="About",rows="10")}}
+
+        </div>
+
+
+        <div class="form-group">
+
+			<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+
+		</div>
+
+<!--      Post Listing Button-->
+		<div class="form-group">
+          {{ form.submit (class_="btn btn-primary btn-lg")}}
+        </div>
+    </form>
+
+</div>
+</section>
+
+
+{% endblock %}

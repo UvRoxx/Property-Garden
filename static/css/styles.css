@@ -1,0 +1,21 @@
+body{
+  text-align: center;
+  margin:o;
+  padding:0;
+  background:url("https://static.zumpercdn.com/nzr/a82e088b60e22990965c5e3a875825ec2c653022/img/homepage/hero.jpg?auto=format&fit=crop&w=976&h=702");
+  background-size:contain;
+    backdrop-filter: blur(3px);
+      background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+}
+.logo{
+
+  display: inline-block;
+}
+.input{
+  width: 100%;
+}
+

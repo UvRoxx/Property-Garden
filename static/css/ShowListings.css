@@ -1,0 +1,222 @@
+body{
+background: linear-gradient(to bottom, #009933 0%, #ccff99 100%);
+ background:url("https://static.zumpercdn.com/nzr/a82e088b60e22990965c5e3a875825ec2c653022/img/homepage/hero.jpg?auto=format&fit=crop&w=976&h=702");
+  background-size:contain;
+    backdrop-filter: blur(3px);
+      background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;}
+.col-md-6{
+height:55rem;
+border:1px solid #111;
+width:410px;
+margin:35px;
+background-color:white;
+
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+
+
+
+  transition: 0.4s;
+}
+.col-md-6:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+img{
+  border-radius: 40px;
+  width:280px;
+}
+.spacer{
+
+
+
+height:100px;}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+.col-md-6{
+height: 55rem;
+border:1px solid #111;
+width:80%;
+margin: 32px;
+margin-left:auto;
+margin-right:auto;
+}
+img{
+  border-radius: 40px;
+  width:100%;
+}
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+.col-md-6{
+height: 55rem;
+border:1px solid #111;
+width:80%;
+margin: 32px;
+margin-left:auto;
+margin-right:auto;
+}
+img{
+  border-radius: 40px;
+  width:100%;
+}
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+.col-md-6{
+height: 55rem;
+border:1px solid #111;
+width:80%;
+    margin: 32px;
+margin-left:auto;
+margin-right:auto;
+}
+img{
+  border-radius: 40px;
+  width:100%;
+}
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+.col-md-6{
+height: 55rem;
+border:1px solid #111;
+width:80%;
+    margin: 32px;
+margin-left:auto;
+margin-right:auto;
+}
+img{
+  border-radius: 40px;
+  width:100%;
+}
+
+}
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 3rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: 41px;
+    max-width:92%;
+
+}
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem;
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+.breadcrumb {
+    display:none;
+
+}
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
+.breadcrumb {
+    display:none;
+
+}
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+.breadcrumb {
+    display:none;
+
+}
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+
+.breadcrumb {
+    display:none;
+
+}
+
+}
+#columnss{
+  animation: fadeIn 2.1s ease-in 0.01s;
+}
+
+@keyframes fadeIn {
+  5% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+    .fa-trash-alt{
+    font-size:5rem;
+    padding:10px;
+    color:red;
+    }

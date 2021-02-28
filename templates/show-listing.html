@@ -1,0 +1,91 @@
+{% extends "bootstrap/base.html"%}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% include 'header.html'%}
+{% block styles %}
+{{ super() }}
+
+<link rel="stylesheet" href="static/css/ShowListings.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/all.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Navbar.css')}}">
+
+<style>
+    body{
+    text-align:center;
+    }
+.row{
+  animation: fadeIn 0.8s ease-in 0.01s;
+}
+
+
+
+@keyframes fadeIn {
+  5% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+</style>
+{% endblock%}
+
+{% block title%}Property Garden{% endblock %}
+{% block content%}
+ <div class="spacer"></div>
+
+    <section id="bc" class="mt-3">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{{url_for('home')}}"> <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item active">Show Listing</li>
+          </ol>
+        </nav>
+      </div>
+
+    </section>
+
+ <section id="listings" class="py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Listing 1 -->
+             {% for listing in listings %}
+       <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-preview">
+                 <img
+                class="card-img-top"
+                src="../static/images/logohouse.jpg"
+                alt="PropertyImage" height="280" width="280"
+              />
+
+              <div class="card-img-overlay">
+                <h2>
+                  <span class="badge badge-secondary text-white">${{listing.price}}</span>
+                </h2>
+              </div>
+              <div class="card-body">
+                <div class="listing-heading text-center">
+                  <h4 class="text-primary"  ><a href="{{url_for('show_listing_detail',id=listing.id)}}"> {{listing.address}}</a></h4>
+                  <p>
+                    <i class="fas fa-map-marker text-secondary" ></i> {{listing.title}}
+                  </p>
+                </div>
+           <span>Posted By:- </span>     <a href="#">{{listing.author.name}}</a>
+                on {{listing.date}}
+
+
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+ </section>
+
+
+{% endblock %}

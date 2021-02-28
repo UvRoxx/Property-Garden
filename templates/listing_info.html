@@ -1,0 +1,35 @@
+{% include "header.html" %}
+<div class="overlay"></div>
+<div class="container" style="background-image: url('{{listing.img_url}}')">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+                <h1>{{listing.title}}</h1>
+                <h2 class="subheading">{{listing.address}}</h2>
+                <h2 class="subheading">{{listing.price}}</h2>
+                <span class="meta">Posted by
+              <a href="#">{{listing.author.name}}</a>
+              on {{listing.date}}</span>
+                <div class="clearfix">
+                    <a class="btn btn-primary float-right" href="{{url_for(listing.url)}}">Checkout Original</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {{ post.about }}
+                <hr>
+
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>

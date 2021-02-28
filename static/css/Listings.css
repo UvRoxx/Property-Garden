@@ -1,0 +1,254 @@
+.buttonss{
+    background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+    width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+}
+.butto{
+ background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+    width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+}
+.btn-1 {
+  background: #09a14e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 100px;
+  width: 50%;
+  height: 69px;
+  position: relative;
+  z-index:1;
+}
+.btn-1::after {
+  font-weight: 100;
+  position: absolute;
+  left: 85%;
+  top: 31%;
+  right: 5%;
+  bottom: 0;
+  opacity: 0;
+}
+.btn-1:hover {
+  background: #08b45e;
+  transition: all 0.5s;
+  box-shadow: 0px 6px 15px #07b43361;
+  padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+}
+.btn-1:hover::after {
+  opacity: 1;
+  transition: all 0.5s;
+}
+.btn_Card {
+  color: #eee;
+  background-color: #08b45e;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  width: 100%;
+  text-decoration: none;
+  cursor:pointer;
+}
+.btn_Card:hover {
+  text-decoration: none;
+  color: #fff;
+}
+#listings{
+margin-top:5%;
+}
+.spacer {
+  height: 100px;
+}
+.card-img-overlay{
+height:50%;
+}
+
+
+.row{
+  animation: fadeIn 0.8s ease-in 0.01s;
+}
+
+
+
+@keyframes fadeIn {
+  5% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+..buttonss{
+    background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+        width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+.butto{
+ background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+      width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+.buttonss{
+    background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+      width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+.butto{
+ background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+     width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+.buttonss{
+    background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+      width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+.butto{
+ background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+       width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+.buttonss{
+    background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+        width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+.butto{
+ background: #09a14e;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 100px;
+       width: 96%;
+    height: 69px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+}
+
+

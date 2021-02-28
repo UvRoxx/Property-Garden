@@ -1,0 +1,80 @@
+{% extends 'bootstrap/base.html' %}
+{% include 'header.html'%}
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/all.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Listings.css')}}">
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/Bootstrap.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Navbar.css')}}">
+{% endblock%}
+{% block content %}
+<div class="spacer"></div>
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{url_for('home')}}"> <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active">{{searching_in}}</li>
+            </ol>
+        </nav>
+    </div>
+
+</section>
+
+<!--Listings-->
+
+<section id="listings" class="py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Listing 1 -->
+            {%for index in range(0,len)%}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card listing-preview">
+                    <img
+                            class="card-img-top"
+                            src="{{results[index]['img_url']}}"
+                            alt="PropertyImage" height="280" width="280"
+                    />
+                    <div class="card-img-overlay">
+                        <h2>
+                            <span class="badge badge-secondary text-white">${{results[index]['price']}}</span>
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="listing-heading text-center">
+                            <h4 class="text-primary">{{results[index]['address'][:50]}}</h4>
+
+                            <p>
+                                <i class="fas fa-map-marker text-secondary"></i> {{searching_in}}
+                            </p>
+                        </div>
+
+                        <a href="{{results[index]['url']}}" class="btn btn-primary btn-block"
+                        >More Info</a
+                        >
+                        <a href="{{url_for('direct_post',index = index)}}" class="btn btn-primary btn-block"
+                        >Post Directly</a
+                        >
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <a href="{{ url_for('results',query=searching_in,page_number=page_number)}}">
+                <button class="buttonss" >Show More</button>
+                </a>
+            </div>
+            <div class="col-sm">
+             <a href="{{ url_for('download')}}">
+                <button class="butto" >Download Current Result</button>
+                </a>
+                 </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

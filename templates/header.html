@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="static/css/Navbar.css">
+<script src="https://kit.fontawesome.com/18ad7e4eb5.js" crossorigin="anonymous"></script>
+<nav class="navbar">
+    <a href="#" class="navbar-brand"><span>P</span>roperty<span>G</span>arden</a>
+    <ul>
+        <li><a href="{{url_for('home')}}">Search <span class="sr-only">(current)</span></a></li>
+
+        {% if not logged_in: %}
+        <li><a href="{{url_for('signup')}}">Register/Login <span class="sr-only">(current)</span></a></li>
+        {% endif %}
+        <li><a href="{{url_for('show_all')}}">All Listings <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{url_for('ShowMyListings')}}">My Listings <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{url_for('add_listing')}}">Post Listing <span class="sr-only">(current)</span></a></li>
+                {% if logged_in: %}
+        <li><a href="#">Welcome {{name}}</a></li>
+                {% endif %}
+{% if logged_in: %}
+        <li><a href="{{url_for('logout')}}">Logout <span class="sr-only">(current)</span></a></li>
+        {% endif %}
+    </ul>
+    <button class="navbar-toggler">
+        <span></span>
+    </button>
+</nav>
+<script src="{{url_for('static', filename='./js/Navbar.js')}}"></script>

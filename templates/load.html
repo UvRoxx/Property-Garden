@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Garden</title>
+
+
+
+
+
+<script src="https://kit.fontawesome.com/18ad7e4eb5.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+
+<style>
+     body {
+            overflow: hidden;
+        }
+
+        #preloader_overlay {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: transparent;
+                  backdrop-filter: blur(2px);
+            z-index:100;
+            display:none;
+
+        }
+
+        #preloader-logo {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .loading-msg {
+            width: 100%;
+            font-size: 0.80em;
+            color: #555;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            text-align: center;
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #f3f3f3;
+            border-top: 3px solid green;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            animation: spin 1s infinite ease;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #loading-msg {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 25px;
+            text-align: center;
+            font-family:  Arial, sans-serif;
+            color: #eee;
+            font-size: 2em;
+        }
+
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="preloader_overlay">
+<div id="preloader">
+    <div class="spinner"></div>
+
+</div>
+</div>
+<script>
+
+
+
+    (function($) {
+    $(document).ready(function() {
+      //In this example, I target all links with the class 'loading'
+      $('input').click(function() {
+        //Remove any current instance of the loading icon first
+        $('#loading-icon').remove();
+
+        //Check if this clicked link has the 'loading' class
+        if($(this).hasClass('btn-1')) {
+          //Create a loading icon instance and add it to the body
+         // $('<i class="fa fa-spin fa-8x fa-cog" id="loading-icon"></i>').appendTo('body');
+
+
+          $("#preloader_overlay").css({
+    display: "block",
+
+
+  })
+        }
+      });
+    });
+  })(jQuery);
+
+</script>
+
+</body>
+</html>
