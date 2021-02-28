@@ -24,4 +24,3 @@ WTForms==2.3.3
 email-validator==1.1.2
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
-pandas==1.2.2

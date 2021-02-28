@@ -25,7 +25,6 @@ from datetime import date
 from random import shuffle
 import json
 import os
-import pandas as pd
 
 # GLOBAL VARS
 
@@ -117,9 +116,6 @@ def results(query, page_number: int):
             result += info
     # result = shuffle(result)
 
-    file = pd.DataFrame(result)
-    file.drop('img_url', inplace=True, axis=1)
-    file.to_csv("static/files/listings.csv")
     with open('data.json', 'w') as fp:
         json.dump(result, fp)
     try:
@@ -290,9 +286,6 @@ def welcome_name() -> str:
         return ""
 
 
-@app.route('/download')
-def download():
-    return send_from_directory("static/files/", filename='listings.csv')
 
 
 @app.errorhandler(401)
