@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests
+import faster_than_requests as requests
 from pprint import pprint
 
 import json
