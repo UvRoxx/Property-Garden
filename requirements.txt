@@ -25,4 +25,5 @@ email-validator==1.1.2
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
 beautifulsoup4==4.9.3
-nimporter==0.1.5
+nimporter==1.0.2
+
