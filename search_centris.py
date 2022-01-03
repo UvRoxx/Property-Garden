@@ -1,4 +1,4 @@
-import faster_than_requests as requests
+import requests
 from bs4 import BeautifulSoup
 from pprint import pprint
 

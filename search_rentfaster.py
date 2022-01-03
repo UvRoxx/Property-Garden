@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 from pprint import pprint
-import faster_than_requests as requests
-
+import requests
 url_head = "https://www.louer.com/"
 url_tail = "+apartments+condos-for-rent/"
 

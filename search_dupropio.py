@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import faster_than_requests as requests
+import requests
 from fuzzywuzzy import process
 from pprint import pprint
 
