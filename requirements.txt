@@ -25,4 +25,5 @@ email-validator==1.1.2
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
 beautifulsoup4==4.9.3
-faster_than_requests
+nimporter==1.1.0
+faster-than-requests==21.3.3
